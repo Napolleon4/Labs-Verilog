@@ -1,0 +1,64 @@
+module Lab_1(
+    input  clk_,
+    input  reset_, 
+    input  func_select,
+    output [2:0] counter, 
+    output func_output);
+
+
+ wire  operand1;
+   wire  operand2; 
+ 
+    bit_counter counter_(
+        .clk(clk_),
+        .reset(reset_),
+        .output_(counter)
+        
+    );
+
+
+  
+ 
+assign operand1= counter[0];
+assign operand2=counter[2];
+
+
+    gate gate_(
+        .input_1(operand1),
+        .input_2(operand2),
+        .Func_slct(func_select),
+        .Func_output(func_output)
+    );
+
+endmodule
+
+module bit_counter(
+    input clk,
+    input  reset,
+    
+    output  [2:0]  output_
+);
+
+reg [2:0] output_count ; 
+    always @(posedge clk  or negedge reset)
+    begin
+        if (!reset)
+            output_count <= 3'b000;
+        else
+            output_count <= output_count + 1;
+       
+    end
+    
+assign output_ = output_count ; 
+
+endmodule
+
+module gate(
+    input   input_1,
+    input   input_2,
+    input  Func_slct,
+    output  Func_output
+);
+
+    assign Func_output = (Func_slct) ? (input_1 ^ input_2) : (input_1 & input_2)  ; 
+    endmodule 

@@ -1,0 +1,31 @@
+|Lab_1
+clk_ => clk_~0.IN1
+reset_ => reset_~0.IN1
+func_select => func_select~0.IN1
+counter[0] <= operand1.DB_MAX_OUTPUT_PORT_TYPE
+counter[1] <= bit_counter:counter_.output_
+counter[2] <= operand2.DB_MAX_OUTPUT_PORT_TYPE
+func_output <= gate:gate_.Func_output
+
+
+|Lab_1|bit_counter:counter_
+clk => output_count[2].CLK
+clk => output_count[1].CLK
+clk => output_count[0].CLK
+reset => output_count[2].ACLR
+reset => output_count[1].ACLR
+reset => output_count[0].ACLR
+output_[0] <= output_count[0].DB_MAX_OUTPUT_PORT_TYPE
+output_[1] <= output_count[1].DB_MAX_OUTPUT_PORT_TYPE
+output_[2] <= output_count[2].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab_1|gate:gate_
+input_1 => Func_output~1.IN0
+input_1 => Func_output~0.IN0
+input_2 => Func_output~1.IN1
+input_2 => Func_output~0.IN1
+Func_slct => Func_output~2.OUTPUTSELECT
+Func_output <= Func_output~2.DB_MAX_OUTPUT_PORT_TYPE
+
+

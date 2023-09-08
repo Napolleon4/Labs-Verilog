@@ -1,0 +1,112 @@
+|Lab_7
+Clock => Clock~0.IN4
+Sel1 => Sel1~0.IN1
+RnW1 => RnW1~0.IN1
+Sel2 => Sel2~0.IN1
+RnW2 => RnW2~0.IN1
+Sel3 => Sel3~0.IN1
+RnW3 => RnW3~0.IN1
+Sel4 => Sel4~0.IN1
+RnW4 => RnW4~0.IN1
+DioExt[0] <= DioExt[0]~0
+DioExt[1] <= DioExt[1]~1
+DioExt[2] <= DioExt[2]~2
+DioExt[3] <= DioExt[3]~3
+DioExt[4] <= DioExt[4]~4
+DioExt[5] <= DioExt[5]~5
+DioExt[6] <= DioExt[6]~6
+DioExt[7] <= DioExt[7]~7
+
+
+|Lab_7|Reg8bit:R1
+Clk => FFstore[7].CLK
+Clk => FFstore[6].CLK
+Clk => FFstore[5].CLK
+Clk => FFstore[4].CLK
+Clk => FFstore[3].CLK
+Clk => FFstore[2].CLK
+Clk => FFstore[1].CLK
+Clk => FFstore[0].CLK
+Sel => Dio~16.IN0
+Sel => always0~0.IN0
+RnW => Dio~16.IN1
+RnW => always0~0.IN1
+Dio[0] <= Dio[0]~0
+Dio[1] <= Dio[1]~1
+Dio[2] <= Dio[2]~2
+Dio[3] <= Dio[3]~3
+Dio[4] <= Dio[4]~4
+Dio[5] <= Dio[5]~5
+Dio[6] <= Dio[6]~6
+Dio[7] <= Dio[7]~7
+
+
+|Lab_7|Reg8bit:R2
+Clk => FFstore[7].CLK
+Clk => FFstore[6].CLK
+Clk => FFstore[5].CLK
+Clk => FFstore[4].CLK
+Clk => FFstore[3].CLK
+Clk => FFstore[2].CLK
+Clk => FFstore[1].CLK
+Clk => FFstore[0].CLK
+Sel => Dio~16.IN0
+Sel => always0~0.IN0
+RnW => Dio~16.IN1
+RnW => always0~0.IN1
+Dio[0] <= Dio[0]~0
+Dio[1] <= Dio[1]~1
+Dio[2] <= Dio[2]~2
+Dio[3] <= Dio[3]~3
+Dio[4] <= Dio[4]~4
+Dio[5] <= Dio[5]~5
+Dio[6] <= Dio[6]~6
+Dio[7] <= Dio[7]~7
+
+
+|Lab_7|Reg8bit:R3
+Clk => FFstore[7].CLK
+Clk => FFstore[6].CLK
+Clk => FFstore[5].CLK
+Clk => FFstore[4].CLK
+Clk => FFstore[3].CLK
+Clk => FFstore[2].CLK
+Clk => FFstore[1].CLK
+Clk => FFstore[0].CLK
+Sel => Dio~16.IN0
+Sel => always0~0.IN0
+RnW => Dio~16.IN1
+RnW => always0~0.IN1
+Dio[0] <= Dio[0]~0
+Dio[1] <= Dio[1]~1
+Dio[2] <= Dio[2]~2
+Dio[3] <= Dio[3]~3
+Dio[4] <= Dio[4]~4
+Dio[5] <= Dio[5]~5
+Dio[6] <= Dio[6]~6
+Dio[7] <= Dio[7]~7
+
+
+|Lab_7|Accumulator:Acc
+Clk => FFstore[7].CLK
+Clk => FFstore[6].CLK
+Clk => FFstore[5].CLK
+Clk => FFstore[4].CLK
+Clk => FFstore[3].CLK
+Clk => FFstore[2].CLK
+Clk => FFstore[1].CLK
+Clk => FFstore[0].CLK
+Sel => Dio~16.IN1
+Sel => Rst.IN1
+RnW => Rst.IN0
+RnW => Dio~16.IN0
+Dio[0] <= Dio[0]~0
+Dio[1] <= Dio[1]~1
+Dio[2] <= Dio[2]~2
+Dio[3] <= Dio[3]~3
+Dio[4] <= Dio[4]~4
+Dio[5] <= Dio[5]~5
+Dio[6] <= Dio[6]~6
+Dio[7] <= Dio[7]~7
+
+

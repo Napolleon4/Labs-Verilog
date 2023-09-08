@@ -1,0 +1,96 @@
+|Lab_5
+Clk => Clk~0.IN1
+Send => Send~0.IN1
+PDin[0] => PDin[0]~7.IN1
+PDin[1] => PDin[1]~6.IN1
+PDin[2] => PDin[2]~5.IN1
+PDin[3] => PDin[3]~4.IN1
+PDin[4] => PDin[4]~3.IN1
+PDin[5] => PDin[5]~2.IN1
+PDin[6] => PDin[6]~1.IN1
+PDin[7] => PDin[7]~0.IN1
+PDout[0] <= Receiver:RC.PDout
+PDout[1] <= Receiver:RC.PDout
+PDout[2] <= Receiver:RC.PDout
+PDout[3] <= Receiver:RC.PDout
+PDout[4] <= Receiver:RC.PDout
+PDout[5] <= Receiver:RC.PDout
+PDout[6] <= Receiver:RC.PDout
+PDout[7] <= Receiver:RC.PDout
+PDready <= Receiver:RC.PDready
+SDout <= SData.DB_MAX_OUTPUT_PORT_TYPE
+SClk <= Clk2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab_5|Transmitter:TM
+clk => stored_Send.CLK
+clk => SR[8].CLK
+clk => SR[7].CLK
+clk => SR[6].CLK
+clk => SR[5].CLK
+clk => SR[4].CLK
+clk => SR[3].CLK
+clk => SR[2].CLK
+clk => SR[1].CLK
+clk => SR[0].CLK
+clk => parity.CLK
+clk => SCout.DATAIN
+Send => stored_Send.DATAIN
+Send => Enable.IN1
+PDin[0] => SR[0].ADATA
+PDin[1] => SR[1].ADATA
+PDin[2] => SR[2].ADATA
+PDin[3] => SR[3].ADATA
+PDin[4] => SR[4].ADATA
+PDin[5] => SR[5].ADATA
+PDin[6] => SR[6].ADATA
+PDin[7] => SR[7].ADATA
+SCout <= clk.DB_MAX_OUTPUT_PORT_TYPE
+SDout <= SDout~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab_5|Receiver:RC
+SCin => PDout_reg[7].CLK
+SCin => PDout_reg[6].CLK
+SCin => PDout_reg[5].CLK
+SCin => PDout_reg[4].CLK
+SCin => PDout_reg[3].CLK
+SCin => PDout_reg[2].CLK
+SCin => PDout_reg[1].CLK
+SCin => PDout_reg[0].CLK
+SCin => PDready_reg.CLK
+SCin => parity.CLK
+SDin => Selector1.IN2
+SDin => parity~0.IN1
+SDin => PDout_reg~15.OUTPUTSELECT
+SDin => PDout_reg~14.OUTPUTSELECT
+SDin => PDout_reg~13.OUTPUTSELECT
+SDin => PDout_reg~12.OUTPUTSELECT
+SDin => PDout_reg~11.OUTPUTSELECT
+SDin => PDout_reg~10.OUTPUTSELECT
+SDin => PDout_reg~9.OUTPUTSELECT
+SDin => PDout_reg~8.OUTPUTSELECT
+SDin => Selector0.IN1
+SDin => PDout_reg~7.OUTPUTSELECT
+SDin => PDout_reg~6.OUTPUTSELECT
+SDin => PDout_reg~5.OUTPUTSELECT
+SDin => PDout_reg~4.OUTPUTSELECT
+SDin => PDout_reg~3.OUTPUTSELECT
+SDin => PDout_reg~2.OUTPUTSELECT
+SDin => PDout_reg~1.OUTPUTSELECT
+SDin => PDout_reg~0.OUTPUTSELECT
+SDin => state~2.OUTPUTSELECT
+SDin => state~1.OUTPUTSELECT
+SDin => state~0.OUTPUTSELECT
+PDout[0] <= PDout_reg[0].DB_MAX_OUTPUT_PORT_TYPE
+PDout[1] <= PDout_reg[1].DB_MAX_OUTPUT_PORT_TYPE
+PDout[2] <= PDout_reg[2].DB_MAX_OUTPUT_PORT_TYPE
+PDout[3] <= PDout_reg[3].DB_MAX_OUTPUT_PORT_TYPE
+PDout[4] <= PDout_reg[4].DB_MAX_OUTPUT_PORT_TYPE
+PDout[5] <= PDout_reg[5].DB_MAX_OUTPUT_PORT_TYPE
+PDout[6] <= PDout_reg[6].DB_MAX_OUTPUT_PORT_TYPE
+PDout[7] <= PDout_reg[7].DB_MAX_OUTPUT_PORT_TYPE
+PDready <= PDready_reg.DB_MAX_OUTPUT_PORT_TYPE
+ParErr <= parity.DB_MAX_OUTPUT_PORT_TYPE
+
+

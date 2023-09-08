@@ -1,0 +1,294 @@
+Classic Timing Analyzer report for Lab_5
+Sun Jun 04 01:30:06 2023
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'Clk'
+  7. tsu
+  8. tco
+  9. tpd
+ 10. th
+ 11. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                              ;
++------------------------------+-------+---------------+------------------------------------------------+--------------------------+----------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                                    ; From                     ; To                         ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+------------------------------------------------+--------------------------+----------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 4.142 ns                                       ; Send                     ; Transmitter:TM|stored_Send ; --         ; Clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 9.136 ns                                       ; Receiver:RC|PDout_reg[6] ; PDout[6]                   ; Clk        ; --       ; 0            ;
+; Worst-case tpd               ; N/A   ; None          ; 5.206 ns                                       ; Clk                      ; SClk                       ; --         ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -4.090 ns                                      ; Send                     ; Transmitter:TM|stored_Send ; --         ; Clk      ; 0            ;
+; Clock Setup: 'Clk'           ; N/A   ; None          ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Transmitter:TM|SR[7]     ; Transmitter:TM|SR[8]       ; Clk        ; Clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                                ;                          ;                            ;            ;          ; 0            ;
++------------------------------+-------+---------------+------------------------------------------------+--------------------------+----------------------------+------------+----------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                           ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                              ; Setting            ; From ; To ; Entity Name ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                         ; EP1C6T144C8        ;      ;    ;             ;
+; Timing Models                                                       ; Final              ;      ;    ;             ;
+; Default hold multicycle                                             ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                           ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                              ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                      ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                    ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                               ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                             ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                    ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                       ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                   ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                   ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node               ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                               ; 10                 ;      ;    ;             ;
+; Number of paths to report                                           ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                        ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                              ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                          ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                        ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis      ; Off                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                          ; Near End           ;      ;    ;             ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 6      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'Clk'                                                                                                                                                                                                       ;
++-------+------------------------------------------------+--------------------------+--------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From                     ; To                       ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+--------------------------+--------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Transmitter:TM|SR[7]     ; Transmitter:TM|SR[8]     ; Clk        ; Clk      ; None                        ; None                      ; 3.187 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Receiver:RC|state.001    ; Receiver:RC|PDout_reg[7] ; Clk        ; Clk      ; None                        ; None                      ; 3.153 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Transmitter:TM|SR[0]     ; Transmitter:TM|parity    ; Clk        ; Clk      ; None                        ; None                      ; 3.008 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Transmitter:TM|parity    ; Receiver:RC|PDout_reg[7] ; Clk        ; Clk      ; None                        ; None                      ; 3.001 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Transmitter:TM|SR[8]     ; Receiver:RC|PDout_reg[7] ; Clk        ; Clk      ; None                        ; None                      ; 2.722 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Receiver:RC|state.001    ; Receiver:RC|PDout_reg[1] ; Clk        ; Clk      ; None                        ; None                      ; 2.452 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Receiver:RC|state.001    ; Receiver:RC|PDout_reg[2] ; Clk        ; Clk      ; None                        ; None                      ; 2.452 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Receiver:RC|state.001    ; Receiver:RC|PDout_reg[3] ; Clk        ; Clk      ; None                        ; None                      ; 2.452 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Receiver:RC|state.001    ; Receiver:RC|PDout_reg[4] ; Clk        ; Clk      ; None                        ; None                      ; 2.452 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Receiver:RC|state.001    ; Receiver:RC|PDout_reg[5] ; Clk        ; Clk      ; None                        ; None                      ; 2.452 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Receiver:RC|state.001    ; Receiver:RC|PDout_reg[6] ; Clk        ; Clk      ; None                        ; None                      ; 2.452 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Receiver:RC|state.000    ; Receiver:RC|PDout_reg[7] ; Clk        ; Clk      ; None                        ; None                      ; 2.409 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Transmitter:TM|parity    ; Receiver:RC|PDout_reg[1] ; Clk        ; Clk      ; None                        ; None                      ; 2.300 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Transmitter:TM|parity    ; Receiver:RC|PDout_reg[2] ; Clk        ; Clk      ; None                        ; None                      ; 2.300 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Transmitter:TM|parity    ; Receiver:RC|PDout_reg[3] ; Clk        ; Clk      ; None                        ; None                      ; 2.300 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Transmitter:TM|parity    ; Receiver:RC|PDout_reg[4] ; Clk        ; Clk      ; None                        ; None                      ; 2.300 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Transmitter:TM|parity    ; Receiver:RC|PDout_reg[5] ; Clk        ; Clk      ; None                        ; None                      ; 2.300 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Transmitter:TM|parity    ; Receiver:RC|PDout_reg[6] ; Clk        ; Clk      ; None                        ; None                      ; 2.300 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Transmitter:TM|SR[8]     ; Receiver:RC|PDout_reg[0] ; Clk        ; Clk      ; None                        ; None                      ; 2.118 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Transmitter:TM|SR[8]     ; Receiver:RC|PDout_reg[1] ; Clk        ; Clk      ; None                        ; None                      ; 2.021 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Transmitter:TM|SR[8]     ; Receiver:RC|PDout_reg[2] ; Clk        ; Clk      ; None                        ; None                      ; 2.021 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Transmitter:TM|SR[8]     ; Receiver:RC|PDout_reg[3] ; Clk        ; Clk      ; None                        ; None                      ; 2.021 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Transmitter:TM|SR[8]     ; Receiver:RC|PDout_reg[4] ; Clk        ; Clk      ; None                        ; None                      ; 2.021 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Transmitter:TM|SR[8]     ; Receiver:RC|PDout_reg[5] ; Clk        ; Clk      ; None                        ; None                      ; 2.021 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Transmitter:TM|SR[8]     ; Receiver:RC|PDout_reg[6] ; Clk        ; Clk      ; None                        ; None                      ; 2.021 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Receiver:RC|state.000    ; Receiver:RC|PDout_reg[0] ; Clk        ; Clk      ; None                        ; None                      ; 1.921 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Receiver:RC|PDout_reg[0] ; Receiver:RC|PDout_reg[1] ; Clk        ; Clk      ; None                        ; None                      ; 1.847 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Transmitter:TM|parity    ; Receiver:RC|PDout_reg[0] ; Clk        ; Clk      ; None                        ; None                      ; 1.804 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Receiver:RC|state.001    ; Receiver:RC|PDout_reg[0] ; Clk        ; Clk      ; None                        ; None                      ; 1.786 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Receiver:RC|PDout_reg[6] ; Receiver:RC|PDout_reg[7] ; Clk        ; Clk      ; None                        ; None                      ; 1.764 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Receiver:RC|state.000    ; Receiver:RC|PDout_reg[1] ; Clk        ; Clk      ; None                        ; None                      ; 1.708 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Receiver:RC|state.000    ; Receiver:RC|PDout_reg[2] ; Clk        ; Clk      ; None                        ; None                      ; 1.708 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Receiver:RC|state.000    ; Receiver:RC|PDout_reg[3] ; Clk        ; Clk      ; None                        ; None                      ; 1.708 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Receiver:RC|state.000    ; Receiver:RC|PDout_reg[4] ; Clk        ; Clk      ; None                        ; None                      ; 1.708 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Receiver:RC|state.000    ; Receiver:RC|PDout_reg[5] ; Clk        ; Clk      ; None                        ; None                      ; 1.708 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Receiver:RC|state.000    ; Receiver:RC|PDout_reg[6] ; Clk        ; Clk      ; None                        ; None                      ; 1.708 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Receiver:RC|state.001    ; Receiver:RC|state.000    ; Clk        ; Clk      ; None                        ; None                      ; 1.270 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Transmitter:TM|SR[1]     ; Transmitter:TM|SR[2]     ; Clk        ; Clk      ; None                        ; None                      ; 1.268 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Transmitter:TM|SR[0]     ; Transmitter:TM|SR[1]     ; Clk        ; Clk      ; None                        ; None                      ; 1.268 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Receiver:RC|PDout_reg[3] ; Receiver:RC|PDout_reg[4] ; Clk        ; Clk      ; None                        ; None                      ; 1.267 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Receiver:RC|PDout_reg[4] ; Receiver:RC|PDout_reg[5] ; Clk        ; Clk      ; None                        ; None                      ; 1.267 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Receiver:RC|state.000    ; Receiver:RC|state.001    ; Clk        ; Clk      ; None                        ; None                      ; 1.250 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Transmitter:TM|parity    ; Receiver:RC|state.001    ; Clk        ; Clk      ; None                        ; None                      ; 1.141 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Transmitter:TM|parity    ; Receiver:RC|state.000    ; Clk        ; Clk      ; None                        ; None                      ; 1.135 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Transmitter:TM|SR[3]     ; Transmitter:TM|SR[4]     ; Clk        ; Clk      ; None                        ; None                      ; 1.116 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Transmitter:TM|SR[6]     ; Transmitter:TM|SR[7]     ; Clk        ; Clk      ; None                        ; None                      ; 1.114 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Receiver:RC|PDout_reg[2] ; Receiver:RC|PDout_reg[3] ; Clk        ; Clk      ; None                        ; None                      ; 1.114 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Receiver:RC|PDout_reg[5] ; Receiver:RC|PDout_reg[6] ; Clk        ; Clk      ; None                        ; None                      ; 1.114 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Receiver:RC|PDout_reg[0] ; Receiver:RC|PDout_reg[0] ; Clk        ; Clk      ; None                        ; None                      ; 1.014 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Transmitter:TM|SR[8]     ; Receiver:RC|state.000    ; Clk        ; Clk      ; None                        ; None                      ; 0.886 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Transmitter:TM|SR[8]     ; Receiver:RC|state.001    ; Clk        ; Clk      ; None                        ; None                      ; 0.876 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Receiver:RC|PDout_reg[1] ; Receiver:RC|PDout_reg[2] ; Clk        ; Clk      ; None                        ; None                      ; 0.852 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Transmitter:TM|SR[2]     ; Transmitter:TM|SR[3]     ; Clk        ; Clk      ; None                        ; None                      ; 0.830 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Transmitter:TM|SR[4]     ; Transmitter:TM|SR[5]     ; Clk        ; Clk      ; None                        ; None                      ; 0.827 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Transmitter:TM|SR[5]     ; Transmitter:TM|SR[6]     ; Clk        ; Clk      ; None                        ; None                      ; 0.825 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Receiver:RC|state.000    ; Receiver:RC|state.000    ; Clk        ; Clk      ; None                        ; None                      ; 0.613 ns                ;
++-------+------------------------------------------------+--------------------------+--------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++----------------------------------------------------------------------------------+
+; tsu                                                                              ;
++-------+--------------+------------+------+----------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From ; To                         ; To Clock ;
++-------+--------------+------------+------+----------------------------+----------+
+; N/A   ; None         ; 4.142 ns   ; Send ; Transmitter:TM|stored_Send ; Clk      ;
++-------+--------------+------------+------+----------------------------+----------+
+
+
++--------------------------------------------------------------------------------------+
+; tco                                                                                  ;
++-------+--------------+------------+--------------------------+----------+------------+
+; Slack ; Required tco ; Actual tco ; From                     ; To       ; From Clock ;
++-------+--------------+------------+--------------------------+----------+------------+
+; N/A   ; None         ; 9.136 ns   ; Receiver:RC|PDout_reg[6] ; PDout[6] ; Clk        ;
+; N/A   ; None         ; 8.725 ns   ; Receiver:RC|PDout_reg[2] ; PDout[2] ; Clk        ;
+; N/A   ; None         ; 8.653 ns   ; Receiver:RC|PDout_reg[1] ; PDout[1] ; Clk        ;
+; N/A   ; None         ; 8.420 ns   ; Receiver:RC|PDout_reg[5] ; PDout[5] ; Clk        ;
+; N/A   ; None         ; 8.007 ns   ; Transmitter:TM|SR[8]     ; SDout    ; Clk        ;
+; N/A   ; None         ; 7.693 ns   ; Transmitter:TM|parity    ; SDout    ; Clk        ;
+; N/A   ; None         ; 7.481 ns   ; Receiver:RC|PDout_reg[7] ; PDout[7] ; Clk        ;
+; N/A   ; None         ; 7.446 ns   ; Receiver:RC|PDout_reg[3] ; PDout[3] ; Clk        ;
+; N/A   ; None         ; 7.028 ns   ; Receiver:RC|PDout_reg[4] ; PDout[4] ; Clk        ;
+; N/A   ; None         ; 6.547 ns   ; Receiver:RC|PDout_reg[0] ; PDout[0] ; Clk        ;
++-------+--------------+------------+--------------------------+----------+------------+
+
+
++-----------------------------------------------------------+
+; tpd                                                       ;
++-------+-------------------+-----------------+------+------+
+; Slack ; Required P2P Time ; Actual P2P Time ; From ; To   ;
++-------+-------------------+-----------------+------+------+
+; N/A   ; None              ; 5.206 ns        ; Clk  ; SClk ;
++-------+-------------------+-----------------+------+------+
+
+
++----------------------------------------------------------------------------------------+
+; th                                                                                     ;
++---------------+-------------+-----------+------+----------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From ; To                         ; To Clock ;
++---------------+-------------+-----------+------+----------------------------+----------+
+; N/A           ; None        ; -4.090 ns ; Send ; Transmitter:TM|stored_Send ; Clk      ;
++---------------+-------------+-----------+------+----------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.0 Build 132 02/25/2009 SJ Web Edition
+    Info: Processing started: Sun Jun 04 01:30:06 2023
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off Lab_5 -c Lab_5 --timing_analysis_only
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "Clk" is an undefined clock
+Info: Clock "Clk" Internal fmax is restricted to 275.03 MHz between source register "Transmitter:TM|SR[7]" and destination register "Transmitter:TM|SR[8]"
+    Info: fmax restricted to Clock High delay (1.818 ns) plus Clock Low delay (1.818 ns) : restricted to 3.636 ns. Expand message to see actual delay path.
+        Info: + Longest register to register delay is 3.187 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X29_Y2_N9; Fanout = 1; REG Node = 'Transmitter:TM|SR[7]'
+            Info: 2: + IC(2.878 ns) + CELL(0.309 ns) = 3.187 ns; Loc. = LC_X8_Y2_N5; Fanout = 4; REG Node = 'Transmitter:TM|SR[8]'
+            Info: Total cell delay = 0.309 ns ( 9.70 % )
+            Info: Total interconnect delay = 2.878 ns ( 90.30 % )
+        Info: - Smallest clock skew is -0.007 ns
+            Info: + Shortest clock path from clock "Clk" to destination register is 2.902 ns
+                Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_17; Fanout = 22; CLK Node = 'Clk'
+                Info: 2: + IC(0.722 ns) + CELL(0.711 ns) = 2.902 ns; Loc. = LC_X8_Y2_N5; Fanout = 4; REG Node = 'Transmitter:TM|SR[8]'
+                Info: Total cell delay = 2.180 ns ( 75.12 % )
+                Info: Total interconnect delay = 0.722 ns ( 24.88 % )
+            Info: - Longest clock path from clock "Clk" to source register is 2.909 ns
+                Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_17; Fanout = 22; CLK Node = 'Clk'
+                Info: 2: + IC(0.729 ns) + CELL(0.711 ns) = 2.909 ns; Loc. = LC_X29_Y2_N9; Fanout = 1; REG Node = 'Transmitter:TM|SR[7]'
+                Info: Total cell delay = 2.180 ns ( 74.94 % )
+                Info: Total interconnect delay = 0.729 ns ( 25.06 % )
+        Info: + Micro clock to output delay of source is 0.224 ns
+        Info: + Micro setup delay of destination is 0.037 ns
+Info: tsu for register "Transmitter:TM|stored_Send" (data pin = "Send", clock pin = "Clk") is 4.142 ns
+    Info: + Longest pin to register delay is 7.014 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_84; Fanout = 2; PIN Node = 'Send'
+        Info: 2: + IC(5.430 ns) + CELL(0.115 ns) = 7.014 ns; Loc. = LC_X30_Y5_N2; Fanout = 1; REG Node = 'Transmitter:TM|stored_Send'
+        Info: Total cell delay = 1.584 ns ( 22.58 % )
+        Info: Total interconnect delay = 5.430 ns ( 77.42 % )
+    Info: + Micro setup delay of destination is 0.037 ns
+    Info: - Shortest clock path from clock "Clk" to destination register is 2.909 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_17; Fanout = 22; CLK Node = 'Clk'
+        Info: 2: + IC(0.729 ns) + CELL(0.711 ns) = 2.909 ns; Loc. = LC_X30_Y5_N2; Fanout = 1; REG Node = 'Transmitter:TM|stored_Send'
+        Info: Total cell delay = 2.180 ns ( 74.94 % )
+        Info: Total interconnect delay = 0.729 ns ( 25.06 % )
+Info: tco from clock "Clk" to destination pin "PDout[6]" through register "Receiver:RC|PDout_reg[6]" is 9.136 ns
+    Info: + Longest clock path from clock "Clk" to source register is 2.902 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_17; Fanout = 22; CLK Node = 'Clk'
+        Info: 2: + IC(0.722 ns) + CELL(0.711 ns) = 2.902 ns; Loc. = LC_X8_Y2_N2; Fanout = 2; REG Node = 'Receiver:RC|PDout_reg[6]'
+        Info: Total cell delay = 2.180 ns ( 75.12 % )
+        Info: Total interconnect delay = 0.722 ns ( 24.88 % )
+    Info: + Micro clock to output delay of source is 0.224 ns
+    Info: + Longest register to pin delay is 6.010 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X8_Y2_N2; Fanout = 2; REG Node = 'Receiver:RC|PDout_reg[6]'
+        Info: 2: + IC(3.886 ns) + CELL(2.124 ns) = 6.010 ns; Loc. = PIN_74; Fanout = 0; PIN Node = 'PDout[6]'
+        Info: Total cell delay = 2.124 ns ( 35.34 % )
+        Info: Total interconnect delay = 3.886 ns ( 64.66 % )
+Info: Longest tpd from source pin "Clk" to destination pin "SClk" is 5.206 ns
+    Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_17; Fanout = 22; CLK Node = 'Clk'
+    Info: 2: + IC(1.629 ns) + CELL(2.108 ns) = 5.206 ns; Loc. = PIN_130; Fanout = 0; PIN Node = 'SClk'
+    Info: Total cell delay = 3.577 ns ( 68.71 % )
+    Info: Total interconnect delay = 1.629 ns ( 31.29 % )
+Info: th for register "Transmitter:TM|stored_Send" (data pin = "Send", clock pin = "Clk") is -4.090 ns
+    Info: + Longest clock path from clock "Clk" to destination register is 2.909 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_17; Fanout = 22; CLK Node = 'Clk'
+        Info: 2: + IC(0.729 ns) + CELL(0.711 ns) = 2.909 ns; Loc. = LC_X30_Y5_N2; Fanout = 1; REG Node = 'Transmitter:TM|stored_Send'
+        Info: Total cell delay = 2.180 ns ( 74.94 % )
+        Info: Total interconnect delay = 0.729 ns ( 25.06 % )
+    Info: + Micro hold delay of destination is 0.015 ns
+    Info: - Shortest pin to register delay is 7.014 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_84; Fanout = 2; PIN Node = 'Send'
+        Info: 2: + IC(5.430 ns) + CELL(0.115 ns) = 7.014 ns; Loc. = LC_X30_Y5_N2; Fanout = 1; REG Node = 'Transmitter:TM|stored_Send'
+        Info: Total cell delay = 1.584 ns ( 22.58 % )
+        Info: Total interconnect delay = 5.430 ns ( 77.42 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 188 megabytes
+    Info: Processing ended: Sun Jun 04 01:30:06 2023
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

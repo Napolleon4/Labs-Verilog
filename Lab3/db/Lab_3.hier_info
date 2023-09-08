@@ -1,0 +1,25 @@
+|Lab_3
+clk => clk~0.IN2
+SwOut => SwOut~0.IN2
+DB1 <= Debouncer_1:comb_4.Output
+DB2 <= Debouncer_2:comb_5.Output
+
+
+|Lab_3|Debouncer_1:comb_4
+Input => shft[0].DATAIN
+clk => shft[3].CLK
+clk => shft[2].CLK
+clk => shft[1].CLK
+clk => shft[0].CLK
+clk => Output~reg0.CLK
+Output <= Output~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab_3|Debouncer_2:comb_5
+Input => always0~0.IN1
+clk => Output~reg0.CLK
+clk => Count[1].CLK
+clk => Count[0].CLK
+Output <= Output~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
